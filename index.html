@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    #btn{
+      height: 400px;
+      width: 400px;
+      background-color: skyblue;
+      align-items: center;
+      justify-content: center
+    }
+    #click{
+      font-size: 3em;
+    }
+  </style>
+</head>
+
+<body>
+ <div id="btn" type="button">
+   <p id="click">0</p>
+ </div>
+
+<script>
+  let mn = 0
+  let pwc =1
+  
+  let btn = document.querySelector('#btn')
+  let p = document.querySelector('#click')
+  
+  btn.addEventListener('click', add)
+  
+  function add(){
+    mn = mn + pwc
+    p.innerHTML = mn
+  }
+  
+
+</script>
+</body>
+
+</html>
