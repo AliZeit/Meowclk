@@ -18,5 +18,18 @@ html{
 .cat{
     height: 400px;
     width: 400px;
+    background-color: rgb(94, 151, 201);
+}
+.upgrades{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20pxs;    
+}
+
+.upgrade{
+    border-radius: 20px;
+    background-color: rgba(83, 78, 104, 0.829);
+    border: 2px black;
 }
 
