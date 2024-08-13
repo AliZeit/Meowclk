@@ -1,12 +1,12 @@
-let mn = 0
-let pwc =1
+let catCount = 0
+let clickPower =1
 
-let btn = document.querySelector('#btn')
-let p = document.querySelector('#click')
+let btn = document.querySelector('#cat')
+let span = document.querySelector('#main-number')
 
 btn.addEventListener('click', add)
 
 function add(){
-  mn = mn + pwc
-  p.innerHTML = mn
+  catCount = catCount + clickPower
+  span.innerHTML = catCount
 }

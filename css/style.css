@@ -1,14 +1,22 @@
 html{
+    padding: 0;
+    margin: 0;
     background-color: white;
 }
-#btn{
+.main-container{
+
+}
+
+.main{
+
+}
+
+.text-container{
+    text-align: center;
+}
+
+.cat{
     height: 400px;
     width: 400px;
-    background-color: skyblue;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
 }
-#click{
-    font-size: 100px;
-}
+
