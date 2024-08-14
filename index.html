@@ -11,38 +11,50 @@
     padding: 0;
     margin: 0;
     background-color: white;
-}
-.main-container{
-
-}
+    }
+    .main-container{
+    
+    width: 400px;
+    }
 
 .main{
 
 }
 
 .text-container{
-    dysplay: flex;
+    display: flex;
     text-align: center;
+    justify-content: center;
+    width: 400px;
 }
 
 .cat{
     height: 400px;
     width: 400px;
     background-color: rgb(94, 151, 201);
+    border-radius: 30px;
 }
 .upgrades{
+    margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 20pxs;    
+    gap: 10px;    
 }
 
 .upgrade{
-    border-radius: 20px;
+    border-radius: 15px;
     background-color: rgba(83, 78, 104, 0.829);
     border: 2px black;
     min-width: 150px;
-    min-height: 30px;
+    min-height: 100px;
+ }
+ .main-number{
+   font-size: 3em;
+ }
+ .inButton{
+   font-size: 1.8em;
+   color: white
  }
   </style>
   <script src="js/index.js" defer></script>
@@ -52,19 +64,27 @@
   <div class="main-container">
     <section class="main">
       <div class="text-container">
-        <span id="main-number">0</span>
+        <span id="main-number" class="main-number">Cats: 0</span>
       </div>
       <div class="cat-container">
           <div id="cat" class="cat"></div>
       </div>
     </section>
     <section class="upgrades">
-      <button id="first-upgrade" class="upgrade">upgrade1</button>
-      <button id="second-upgrade" class="upgrade">upgrade2</button>
-      <button id="third-upgrade" class="upgrade">upgrade3</button>
-      <button id="fourth-upgrade" class="upgrade">upgrade4</button>
-      <button id="fiveth-upgrade" class="upgrade">upgrade5</button>
-      <button id="sixth-upgrade" class="upgrade">upgrade6</button>
+      <button id="first-upgrade" class="upgrade">
+        <p id="first-cost-span"class="inButton">Cost: 10 cats</p>
+        <p id="first-buff-span" class="inButton">Buff: +1</p>
+        </button>
+      <button id="second-upgrade" class="upgrade"><p id="second-cost-span" class="inButton">Cost: 100 cats</p>
+<p id="second-buff-span" class="inButton">Buff: +5</p></button>
+      <button id="third-upgrade" class="upgrade"><p id="third-cost-span" class="inButton">Cost: 2000 cats</p>
+<p id="third-buff-span" class="inButton">Buff: +50</p></button>
+      <button id="fourth-upgrade" class="upgrade"><p id="fourth-cost-span" class="inButton">Cost: 25000 cats</p>
+<p id="fourth-buff-span" class="inButton">Buff: +400</p></button>
+      <button id="fiveth-upgrade" class="upgrade"><p id="fiveth-cost-span" class="inButton">Cost: 400000 cats</p>
+<p id="fiveth-buff-span" class="inButton">Buff: +4000</p></button>
+      <button id="sixth-upgrade" class="upgrade"><p id="sixth-cost-span" class="inButton">Cost: 5000000 cats</p>
+<p id="sixth-buff-span" class="inButton">Buff: +50000</p></button>
     </section>
   </div>
   <script>
@@ -73,13 +93,26 @@ let btn = document.querySelector('#cat')
 let span = document.querySelector('#main-number')
 
 let upgrades = document.querySelectorAll(`.upgrade`)
+let firstUpgrade = document.querySelector('#first-upgrade')
+let secondUpgrade = document.querySelector('#second-upgrade')
+let thirdUpgrade = document.querySelector('#third-upgrade')
+let fourthUpgrade = document.querySelector('#fourth-upgrade')
+let fifthUpgrade = document.querySelector('#fiveth-upgrade')
+let sixthUpgrade = document.querySelector('#sixth-upgrade')
 
+let firstCostSpan = document.querySelector('#first-cost-span')
+let secondCostSpan = document.querySelector('#second-cost-span')
+let thirdCostSpan = document.querySelector('#third-cost-span')
+let fourthCostSpan = document.querySelector('#fourth-cost-span')
+let fifthCostSpan = document.querySelector('#fiveth-cost-span')
+let sixthCostSpan = document.querySelector('#sixth-cost-span')
 // main number vars
-let catCount = 0
+let catCount = 1000000000000000
 let clickPower = 1
 
 // costs
-let costs = [10 , 50 , 400, 3000]
+let costs = [10 , 100 , 2000, 25000, 400000, 5000000]
+let buffs = [1 , 5, 50, 400, 4000, 50000]
 
 
 //*for (let button of buttons){
@@ -90,8 +123,62 @@ btn.addEventListener('click', add)
 
 function add(){
   catCount = catCount + clickPower
-  span.innerHTML = catCount
+  span.innerHTML =  'Cats: ' + catCount
 }
+firstUpgrade.addEventListener('click',function(){
+  if (catCount >= costs[0]){
+    catCount = catCount - costs[0]
+    clickPower = clickPower + buffs[0]
+    costs[0] = costs[0] + 11
+    span.innerHTML = 'Cats: ' + catCount
+    firstCostSpan.innerHTML  = 'Cost: ' + costs[0] + ' cats'
+  }
+})
+secondUpgrade.addEventListener('click', function() {
+  if (catCount >= costs[1]) {
+    catCount = catCount - costs[1]
+    clickPower = clickPower + buffs[1]
+    costs[1] = costs[1] + 111
+    span.innerHTML = 'Cats: ' + catCount
+    secondCostSpan.innerHTML = 'Cost: ' + costs[1] + ' cats'
+  }
+})
+thirdUpgrade.addEventListener('click', function() {
+  if (catCount >= costs[2]) {
+    catCount = catCount - costs[2]
+    clickPower = clickPower + buffs[2]
+    costs[2] = costs[2] + 2222
+    span.innerHTML = 'Cats: ' + catCount
+    thirdCostSpan.innerHTML = 'Cost: ' + costs[2] + ' cats'
+  }
+})
+fourthUpgrade.addEventListener('click', function() {
+  if (catCount >= costs[3]) {
+    catCount = catCount - costs[3]
+    clickPower = clickPower + buffs[3]
+    costs[3] = costs[3] + 25222
+    span.innerHTML = 'Cats: ' + catCount
+    fourthCostSpan.innerHTML = 'Cost: ' + costs[3] + ' cats'
+  }
+})
+fifthUpgrade.addEventListener('click', function() {
+  if (catCount >= costs[4]) {
+    catCount = catCount - costs[4]
+    clickPower = clickPower + buffs[4]
+    costs[4] = costs[4] + 444444
+    span.innerHTML = 'Cats: ' + catCount
+    fifthCostSpan.innerHTML = 'Cost: ' + costs[4] + ' cats'
+  }
+})
+sixthUpgrade.addEventListener('click', function() {
+  if (catCount >= costs[5]) {
+    catCount = catCount - costs[5]
+    clickPower = clickPower + buffs[5]
+    costs[5] = costs[5] + 5555555
+    span.innerHTML = 'Cats: ' + catCount
+    sixthCostSpan.innerHTML = 'Cost: ' + costs[5] + ' cats'
+  }
+})
   </script>
 </body>
 
