@@ -12,6 +12,7 @@ html{
 }
 
 .text-container{
+    dysplay: flex;
     text-align: center;
 }
 
