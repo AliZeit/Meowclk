@@ -185,7 +185,7 @@ sixthUpgrade.addEventListener('click', function() {
   if (catCount >= costs[5]) {
     catCount = catCount - costs[5]
     clickPower = clickPower + buffs[5]
-    costs[5] = costs[5] + 5555555
+    costs[5] = Math.floor(costs[5] + 5555555 + (costs[5]*0.01))
     span.innerHTML = 'Cats: ' + catCount
     sixthCostSpan.innerHTML = 'Cost: ' + costs[5] + ' cats'
   }
