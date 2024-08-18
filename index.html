@@ -84,7 +84,7 @@
     <section class="main">
       <div class="text-container">
         <span id="main-number" class="main-number">Cats: 0
-        <img src="cat-export.png" alt="cat-export.png"></span>
+        <img src="cat-export.png" alt="cat-export.png" width="36px"></span>
       </div>
       <div class="cat-container">
           <div id="cat" class="cat"></div>
@@ -134,7 +134,7 @@ let costAdd = [11 ,111, 2222,25222,444444,5555555]
 btn.addEventListener('click', add)
 function add(){
   catCount = catCount + clickPower
-  span.innerHTML =  'Cats: ' + catCount + '<img src="cat2.png">'
+  span.innerHTML =  'Cats: ' + catCount + '<img src="cat-export.png">'
 }
 firstUpgrade.addEventListener('click', function() {
   if (catCount >= costs[0]) {
